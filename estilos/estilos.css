@@ -189,7 +189,6 @@ nav ul li a:hover{
 	background: white;
 	border-bottom: 3px solid #22BCE0;
 	position: relative;
-	min-height: 128px;
 	margin-bottom: 3em;
 }
 
@@ -271,4 +270,30 @@ nav ul li a:hover{
 	#contenido .item:nth-child(odd){
 		margin-right: 2%;
 	}
+}
+
+.formulario{
+	text-align: right;
+	padding: 1em;
+	display: none;
+}
+
+.formulario input{
+	border-radius: 1px;
+	padding: 0.2em 0.6em;
+}
+
+.formulario input[type="text"],
+.formulario input[type="url"]{
+	border: 1px solid #888;
+}
+
+.formulario input[type="submit"]{
+	background: #22BCE0;
+	border-radius: 5px;
+	box-shadow: rgba(0,0,0,0.5) 2px 2px 20px;
+	font-style: italic;
+	padding: 0.2em;
+	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
+	color: white;
 }
