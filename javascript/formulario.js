@@ -2,6 +2,7 @@ var $form 		= $('#formulario'),
 	$titulo 	= $('#titulo'),
 	$url 		= $('#link'),
 	$primerPost = $('.item').first(),
+	$aside		= $('#mapasDeMiLocacion'),
 	$lista 		= $('#contenido'),
 	ss 			= sessionStorage,
 	ls 			= localStorage;
@@ -21,6 +22,7 @@ function mostrarOcultarFormulario()
 {
 	$form.slideToggle();
 	$lista.slideToggle();
+	$aside.slideToggle();
 }
 
 function agregarPost(e)

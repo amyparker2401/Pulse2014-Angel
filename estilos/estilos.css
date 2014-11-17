@@ -94,6 +94,10 @@ header h1{
 	margin: 0.2em 70px 0 0;
 }
 
+aside{
+	display: none;
+}
+
 header #avatar{
 	margin: 0.5em 0.5em 0 0;
 	position: absolute;
@@ -260,6 +264,16 @@ nav ul li a:hover{
 	
 	#contenido {
 		overflow: hidden;
+	}
+
+	aside{
+		display: block;
+		float: right;
+		margin: 1em;
+	}
+
+	#mapasDeMiLocacion{
+		display: block;
 	}
 
 	#contenido .item{

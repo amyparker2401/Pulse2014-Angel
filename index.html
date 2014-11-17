@@ -15,9 +15,7 @@
 			<img src="imagenes/logo.png"/>
 		</figure>
 		<h1>Pulse2014: Comunidad de personas atractivas y millonarias</h1>
-		<figure id="avatar">
-			<img src="imagenes/angel.png"/>
-		</figure>
+		<figure id="avatar"></figure>
 	</header>
 	<nav>
 		<ul>
@@ -34,6 +32,10 @@
 		<input type="url" placeholder="Link" id="link" required>
 		<input type="submit" value="Agregar">
 	</form>
+	<aside id="mapasDeMiLocacion">
+			<div id="clima"></div>
+			<div id="geo"></div>
+		</aside>
 	<section id="contenido">
 		<article class="item">
 			<figure class="imagen_item">
@@ -180,5 +182,36 @@
 	</footer>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="javascript/formulario.js"></script>
+	<script src="javascript/ajax.js"></script>
+	<script>
+		$(function(){
+			var geo = navigator.geolocation;
+
+			function geo_exito(position){
+				var lat = position.coords.latitude;
+				var lon = position.coords.longitude;
+
+				var mapa = new Image();
+				mapa.src = "http://maps.googleapis.com/maps/api/staticmap?center="+lat+","+lon+"&zoom=12&size=200x200&sensor=false";
+
+				$('#geo').append(mapa);
+
+				obtenerGeoInformacion(lat, lon);
+			}
+
+			function geo_error(){
+				console.log("Hmmm... esto es incomodo, nose donde estas");
+			}
+
+			geo.getCurrentPosition(geo_exito, geo_error, {
+				enableHighAccuracy: true,
+				timeout: 5000,
+				maximumAge: 0
+			});
+
+			loadLogos();
+			loadUser();
+		});
+	</script>
 </body>
 </html>
